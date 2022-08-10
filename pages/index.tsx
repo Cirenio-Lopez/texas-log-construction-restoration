@@ -1,5 +1,7 @@
 import type { NextPage } from "next";
 import Link from "next/link";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
@@ -15,9 +17,29 @@ const Index: NextPage = () => {
     <div className="index">
       <section className="cover">
         <div className="img-container">
-          <div className="img-wrapper">
-            <img src="/img/index-cover/cover-1.jpeg" alt="log house" />
-          </div>
+          <Carousel
+            showThumbs={false}
+            showStatus={false}
+            swipeable
+            autoPlay
+            infiniteLoop
+          >
+            <div className="img-wrapper">
+              <img src="/img/index-cover/cover-1.jpeg" alt="log house" />
+            </div>
+            <div className="img-wrapper">
+              <img src="/img/index-cover/cover-2.jpeg" alt="log house" />
+            </div>
+            <div className="img-wrapper">
+              <img src="/img/index-cover/cover-3.jpeg" alt="log house" />
+            </div>
+            <div className="img-wrapper">
+              <img src="/img/index-cover/cover-4.jpeg" alt="log house" />
+            </div>
+            <div className="img-wrapper">
+              <img src="/img/index-cover/cover-5.jpeg" alt="log house" />
+            </div>
+          </Carousel>
         </div>
         <div className="text-container">
           <div className="text-wrapper">
@@ -71,12 +93,32 @@ const Index: NextPage = () => {
           <div className="column-sub">
             <div className="content-block">
               <div className="content-img">
-                <div className="img-wrapper">
-                  <img
-                    src="/img/index-cover/index-1.jpeg"
-                    alt="log house being primed"
-                  />
-                </div>
+                <Carousel swipeable showStatus={false} autoPlay infiniteLoop>
+                  <div className="img-wrapper">
+                    <img
+                      src="/img/index-cover/index-1.jpeg"
+                      alt="log house being primed"
+                    />
+                  </div>
+                  <div className="img-wrapper">
+                    <img
+                      src="/img/index-cover/index-2.jpeg"
+                      alt="log house being primed"
+                    />
+                  </div>
+                  <div className="img-wrapper">
+                    <img
+                      src="/img/index-cover/index-3.jpeg"
+                      alt="log house being primed"
+                    />
+                  </div>
+                  <div className="img-wrapper">
+                    <img
+                      src="/img/index-cover/index-4.jpeg"
+                      alt="log house being primed"
+                    />
+                  </div>
+                </Carousel>
               </div>
             </div>
           </div>

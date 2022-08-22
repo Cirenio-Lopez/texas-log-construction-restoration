@@ -325,6 +325,9 @@
                   border-radius: 8px;
                   transition: all ease 0.6s;
                   cursor: pointer;
+                  .arrow {
+                    padding-right: 4px;
+                  }
                 }
                 .button:hover {
                   background: $background;

@@ -47,7 +47,7 @@ const Nav = () => {
       >
         <ul>
           <li>
-            <Link href="#">
+            <Link href="/about">
               <a
                 onClick={() => setShow(window.innerWidth > 1400 ? true : !show)}
               >
@@ -56,16 +56,16 @@ const Nav = () => {
             </Link>
           </li>
           <li>
-            <Link href="#">
+            <Link href="/gallery">
               <a
                 onClick={() => setShow(window.innerWidth > 1400 ? true : !show)}
               >
-                LOG HOMES
+                GALLERY
               </a>
             </Link>
           </li>
           <li>
-            <Link href="#">
+            <Link href="/services">
               <a
                 onClick={() => setShow(window.innerWidth > 1400 ? true : !show)}
               >
@@ -74,7 +74,7 @@ const Nav = () => {
             </Link>
           </li>
           <li>
-            <Link href="#">
+            <Link href="/contact">
               <a
                 onClick={() => setShow(window.innerWidth > 1400 ? true : !show)}
               >

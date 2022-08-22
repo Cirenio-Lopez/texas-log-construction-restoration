@@ -9,10 +9,11 @@ import {
   faHammer,
   faTree,
   faPenRuler,
+  faAngleRight,
 } from "@fortawesome/free-solid-svg-icons";
 
 const Index: NextPage = () => {
-  library.add(faHouse, faHammer, faTree, faPenRuler);
+  library.add(faHouse, faHammer, faTree, faPenRuler, faAngleRight);
   return (
     <div className="index">
       <section className="cover">
@@ -47,7 +48,7 @@ const Index: NextPage = () => {
             <span className="description">
               We Provide Superior Value, Service, And Effort For Your Log Home
             </span>
-            <Link href="#">
+            <Link href="/services">
               <a className="button">
                 <div className="text">Services</div>
               </a>
@@ -132,9 +133,9 @@ const Index: NextPage = () => {
             </span>
             <h2 className="title">Redefining Log Construction & Restoration</h2>
             <div className="description">
-              The foundation for giving service to our consumers is formed by
-              recycling, collection, organics, energy,
-              <br /> landfills, professional services, and sustainability.
+              The foundation for giving great service is formed by providing the
+              best possible outcome, <br />
+              whether that be in planning, design, building or restoration.
             </div>
           </div>
           <div className="block-services">
@@ -154,7 +155,10 @@ const Index: NextPage = () => {
                   <Link href="#">
                     <a className="button-wrapper">
                       <div className="button">
-                        <span className="arrow"></span>
+                        <FontAwesomeIcon
+                          icon={["fas", "angle-right"]}
+                          className="arrow"
+                        />
                         More Details
                       </div>
                     </a>
@@ -180,7 +184,10 @@ const Index: NextPage = () => {
                   <Link href="#">
                     <a className="button-wrapper">
                       <div className="button">
-                        <span className="arrow"></span>
+                        <FontAwesomeIcon
+                          icon={["fas", "angle-right"]}
+                          className="arrow"
+                        />
                         More Details
                       </div>
                     </a>
@@ -206,7 +213,10 @@ const Index: NextPage = () => {
                   <Link href="#">
                     <a className="button-wrapper">
                       <div className="button">
-                        <span className="arrow"></span>
+                        <FontAwesomeIcon
+                          icon={["fas", "angle-right"]}
+                          className="arrow"
+                        />
                         More Details
                       </div>
                     </a>
@@ -235,7 +245,10 @@ const Index: NextPage = () => {
                   <Link href="#">
                     <a className="button-wrapper">
                       <div className="button">
-                        <span className="arrow"></span>
+                        <FontAwesomeIcon
+                          icon={["fas", "angle-right"]}
+                          className="arrow"
+                        />
                         More Details
                       </div>
                     </a>

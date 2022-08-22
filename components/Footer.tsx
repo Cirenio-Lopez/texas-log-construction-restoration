@@ -27,10 +27,18 @@ const Footer = () => {
         <div className="column">
           <h3 className="title">Our Services</h3>
           <ul className="items">
-            <li>Home Restoration</li>
-            <li>Log Restoration</li>
-            <li>Log Carving</li>
-            <li>Home Construction</li>
+            <li>
+              <Link href="/contact">Home Restoration</Link>
+            </li>
+            <li>
+              <Link href="/contact">Log Restoration</Link>
+            </li>
+            <li>
+              <Link href="/contact">Log Modeling/Design</Link>
+            </li>
+            <li>
+              <Link href="/contact">Home Construction</Link>
+            </li>
           </ul>
         </div>
         <div className="column">

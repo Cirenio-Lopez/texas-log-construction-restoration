@@ -8,19 +8,12 @@ const Footer = () => {
           <h3 className="title">Contact</h3>
           <ul className="items">
             <li>
-              123 Example St.
+              <Link href="tel:2149515087">+1 (214) 951-5087</Link>
               <br />
-              Dallas, TX 75217
-            </li>
-            <li>
-              +800-555-5555
               <br />
-              info@example.com
-            </li>
-            <li>
-              Mon-Sat: 9.00am to 7.00pm
-              <br />
-              Sunday Closed
+              <Link href="mailto:contact@texasloghomecr.com">
+                contact@texasloghomecr.com
+              </Link>
             </li>
           </ul>
         </div>
@@ -28,25 +21,25 @@ const Footer = () => {
           <h3 className="title">Our Services</h3>
           <ul className="items">
             <li>
-              <Link href="/contact">Home Restoration</Link>
+              <Link href="/services">Home Restoration</Link>
             </li>
             <li>
-              <Link href="/contact">Log Restoration</Link>
+              <Link href="/services">Log Restoration</Link>
             </li>
             <li>
-              <Link href="/contact">Log Modeling/Design</Link>
+              <Link href="/services">Log Modeling/Design</Link>
             </li>
             <li>
-              <Link href="/contact">Home Construction</Link>
+              <Link href="/services">Home Construction</Link>
             </li>
           </ul>
         </div>
         <div className="column">
           <h3 className="title">Latest Posts</h3>
           <ul className="items">
-            <li>Latest Home Built in Colorado</li>
-            <li>Latest Home Built in Fort-Worth</li>
-            <li>Latest Home Built in Texas</li>
+            <li>Embed Insta Post Here</li>
+            <li>Embed Insta Post Here</li>
+            <li>Embed Insta Post Here</li>
           </ul>
         </div>
         <div className="column">

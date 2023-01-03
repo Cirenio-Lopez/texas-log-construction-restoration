@@ -11,7 +11,9 @@ const ProjectConstruction = () => {
   return (
     <>
       <Head>
-        <title>Home - Texas Log Home Construction and Restoration</title>
+        <title>
+          Project Construction - Texas Log Home Construction and Restoration
+        </title>
       </Head>
       <div className="gallery section-wrapper">
         <section className="page-header">

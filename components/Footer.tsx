@@ -42,13 +42,41 @@ const Footer = () => {
             <li>Embed Insta Post Here</li>
           </ul>
         </div>
-        <div className="column">
+        <div className="column column-gallery">
           <h3 className="title">Gallery</h3>
-          <ul className="items">
-            <li>Image goes here.</li>
-            <li>Image goes here.</li>
-            <li>Image goes here.</li>
-            <li>Image goes here.</li>
+          <ul className="items gallery-images">
+            <li>
+              <Link href="/gallery/projectOne">
+                <div>
+                  <img src="/gallery/projectOne/cover/cover.jpg" alt="" />
+                  <h3 className="subtitle">Project One</h3>
+                </div>
+              </Link>
+            </li>
+            <li>
+              <Link href="/gallery/projectTwo">
+                <div>
+                  <img src="/gallery/projectTwo/cover/cover.jpg" alt="" />
+                  <h3 className="subtitle">Project Two</h3>
+                </div>
+              </Link>
+            </li>
+            <li>
+              <Link href="/gallery/projectThree">
+                <div>
+                  <img src="/gallery/projectThree/cover/cover.jpg" alt="" />
+                  <h3 className="subtitle">Project Three</h3>
+                </div>
+              </Link>
+            </li>
+            <li>
+              <Link href="/gallery/projectFour">
+                <div>
+                  <img src="/gallery/projectFour/cover/cover.jpg" alt="" />
+                  <h3 className="subtitle">Project Four</h3>
+                </div>
+              </Link>
+            </li>
           </ul>
         </div>
       </div>

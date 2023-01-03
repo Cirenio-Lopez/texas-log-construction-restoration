@@ -10,7 +10,11 @@ const ProjectFive = () => {
   library.add(faAngleRight, faPhone);
   return (
     <>
-      {" "}
+      <Head>
+        <title>
+          Project Five - Texas Log Home Construction and Restoration
+        </title>
+      </Head>
       <div className="gallery section-wrapper">
         <section className="page-header">
           <div className="header-background service-background">

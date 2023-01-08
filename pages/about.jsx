@@ -1,4 +1,3 @@
-import type { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -29,7 +28,7 @@ export async function getStaticProps() {
   };
 }
 
-const About: NextPage = (data) => {
+const About = (data) => {
   library.add(faAngleRight, faHouse, faHammer);
   return (
     <>

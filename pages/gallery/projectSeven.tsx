@@ -44,10 +44,7 @@ const ProjectSeven = (images) => {
       <div className="gallery section-wrapper">
         <section className="page-header">
           <div className="header-background service-background">
-            <img
-              alt="header-background"
-              src={images.images{10}}
-            />
+            <img alt="header-background" src={images.images[10]} />
           </div>
           <div className="text-container">
             <h2 className="title">Gallery</h2>

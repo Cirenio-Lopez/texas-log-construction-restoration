@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { TRUE } from "sass";
 
 const Footer = () => {
   return (
@@ -37,9 +38,14 @@ const Footer = () => {
         <div className="column">
           <h3 className="title">Latest Posts</h3>
           <ul className="items">
-            <li>Embed Insta Post Here</li>
-            <li>Embed Insta Post Here</li>
-            <li>Embed Insta Post Here</li>
+            <iframe
+              src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100089001444349&tabs=timeline&width=340&height=271&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId=520275605923973"
+              height="400"
+              style={{ border: "none", overflow: "hidden", width: "100%" }}
+              frameBorder="0"
+              allowFullScreen
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+            ></iframe>
           </ul>
         </div>
         <div className="column column-gallery">
@@ -71,7 +77,7 @@ const Footer = () => {
               <Link href="/gallery/projectThree">
                 <div>
                   <img
-                    src="/gallery/projectThree/cover/projectThree (cover).jpg"
+                    src="/gallery/projectSix/cover/projectSix (cover).jpg"
                     alt=""
                   />
                   <h3 className="subtitle">Project Three</h3>

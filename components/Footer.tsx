@@ -48,7 +48,10 @@ const Footer = () => {
             <li>
               <Link href="/gallery/projectOne">
                 <div>
-                  <img src="/gallery/projectOne/cover/cover.jpg" alt="" />
+                  <img
+                    src="/gallery/projectOne/cover/projectOne (cover).jpg"
+                    alt=""
+                  />
                   <h3 className="subtitle">Project One</h3>
                 </div>
               </Link>
@@ -56,7 +59,10 @@ const Footer = () => {
             <li>
               <Link href="/gallery/projectTwo">
                 <div>
-                  <img src="/gallery/projectTwo/cover/cover.jpg" alt="" />
+                  <img
+                    src="/gallery/projectTwo/cover/projectTwo (cover).jpg"
+                    alt=""
+                  />
                   <h3 className="subtitle">Project Two</h3>
                 </div>
               </Link>
@@ -64,7 +70,10 @@ const Footer = () => {
             <li>
               <Link href="/gallery/projectThree">
                 <div>
-                  <img src="/gallery/projectThree/cover/cover.jpg" alt="" />
+                  <img
+                    src="/gallery/projectThree/cover/projectThree (cover).jpg"
+                    alt=""
+                  />
                   <h3 className="subtitle">Project Three</h3>
                 </div>
               </Link>
@@ -72,7 +81,10 @@ const Footer = () => {
             <li>
               <Link href="/gallery/projectFour">
                 <div>
-                  <img src="/gallery/projectFour/cover/cover.jpg" alt="" />
+                  <img
+                    src="/gallery/projectFour/cover/projectFour (cover).jpg"
+                    alt=""
+                  />
                   <h3 className="subtitle">Project Four</h3>
                 </div>
               </Link>

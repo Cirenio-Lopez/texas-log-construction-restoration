@@ -3,8 +3,39 @@ import Head from "next/head";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import { gql } from "@apollo/client";
+import client from "../../apolloClient";
 
-const Index = () => {
+export async function getStaticProps() {
+  const { data } = await client.query({
+    query: gql`
+      query {
+        galleries {
+          coverImage {
+            url
+          }
+        }
+      }
+    `,
+  });
+  const coverImages = {
+    0: data.galleries[0].coverImage.url,
+    1: data.galleries[1].coverImage.url,
+    2: data.galleries[2].coverImage.url,
+    3: data.galleries[3].coverImage.url,
+    4: data.galleries[4].coverImage.url,
+    5: data.galleries[5].coverImage.url,
+    6: data.galleries[6].coverImage.url,
+    7: data.galleries[7].coverImage.url,
+    8: data.galleries[8].coverImage.url,
+  };
+
+  return {
+    props: { coverImages },
+  };
+}
+
+const Index = (coverImages) => {
   library.add(faAngleRight);
   return (
     <>
@@ -53,7 +84,7 @@ const Index = () => {
                     <h4>Log Restoration</h4>
                   </div>
                   <div className="block-image">
-                    <img src="/gallery/projectOne/cover/cover.jpg" alt="test" />
+                    <img src={coverImages.coverImages[0]} alt="test" />
                   </div>
                   <div className="block-subtitle">
                     <h4>Texas</h4>
@@ -75,7 +106,7 @@ const Index = () => {
                     <h4>Log Restoration</h4>
                   </div>
                   <div className="block-image">
-                    <img src="/gallery/projectTwo/cover/cover.jpg" alt="test" />
+                    <img src={coverImages.coverImages[1]} alt="test" />
                   </div>
                   <div className="block-subtitle">
                     <h4>Denton</h4>
@@ -98,18 +129,15 @@ const Index = () => {
                     <h4>Home Construction</h4>
                   </div>
                   <div className="block-image">
-                    <img
-                      src="/gallery/projectThree/cover/cover.jpg"
-                      alt="test"
-                    />
+                    <img src={coverImages.coverImages[2]} alt="test" />
                   </div>
                   <div className="block-subtitle">
-                    <h4>Colorado</h4>
+                    <h4>Texas</h4>
                   </div>
                   <div className="block-description">
                     <p>
-                      This project was primarily composed of demolition and
-                      reconstruction of a log home located in Colorado.
+                      This project was primarily focused on log home restoration
+                      for a client located in a remote part of Texas.
                     </p>
                   </div>
                 </div>
@@ -123,18 +151,15 @@ const Index = () => {
                     <h4>Log Restoration</h4>
                   </div>
                   <div className="block-image">
-                    <img
-                      src="/gallery/projectFour/cover/cover.jpg"
-                      alt="test"
-                    />
+                    <img src={coverImages.coverImages[3]} alt="test" />
                   </div>
                   <div className="block-subtitle">
-                    <h4>Texas</h4>
+                    <h4>Colorado</h4>
                   </div>
                   <div className="block-description">
                     <p>
-                      This project was primarily focused on log home restoration
-                      for a client located in a remote part of Texas.
+                      This project was primarily composed of demolition and
+                      reconstruction of a log home located in Colorado.
                     </p>
                   </div>
                 </div>
@@ -150,10 +175,7 @@ const Index = () => {
                     <h4>Home Modeling</h4>
                   </div>
                   <div className="block-image">
-                    <img
-                      src="/gallery/projectFive/cover/cover.jpg"
-                      alt="test"
-                    />
+                    <img src={coverImages.coverImages[4]} alt="test" />
                   </div>
                   <div className="block-subtitle">
                     <h4>Texas</h4>
@@ -175,7 +197,7 @@ const Index = () => {
                     <h4>Log Restoration</h4>
                   </div>
                   <div className="block-image">
-                    <img src="/gallery/projectSix/cover/cover.jpg" alt="test" />
+                    <img src={coverImages.coverImages[5]} alt="test" />
                   </div>
                   <div className="block-subtitle">
                     <h4>Denton</h4>
@@ -198,10 +220,7 @@ const Index = () => {
                     <h4>Log Restoration</h4>
                   </div>
                   <div className="block-image">
-                    <img
-                      src="/gallery/projectSeven/cover/cover.jpg"
-                      alt="test"
-                    />
+                    <img src={coverImages.coverImages[6]} alt="test" />
                   </div>
                   <div className="block-subtitle">
                     <h4>Colorado</h4>
@@ -223,10 +242,7 @@ const Index = () => {
                     <h4>Log Restoration</h4>
                   </div>
                   <div className="block-image">
-                    <img
-                      src="/gallery/projectEight/cover/cover.jpg"
-                      alt="test"
-                    />
+                    <img src={coverImages.coverImages[7]} alt="test" />
                   </div>
                   <div className="block-subtitle">
                     <h4>Texas</h4>
@@ -252,10 +268,7 @@ const Index = () => {
                     <h4>Home Modeling</h4>
                   </div>
                   <div className="block-image">
-                    <img
-                      src="/gallery/projectConstruction/cover/cover.jpg"
-                      alt="test"
-                    />
+                    <img src={coverImages.coverImages[8]} alt="test" />
                   </div>
                   <div className="block-subtitle">
                     <h4>Texas</h4>

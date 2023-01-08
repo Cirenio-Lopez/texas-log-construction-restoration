@@ -5,8 +5,34 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faAngleRight, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { gql } from "@apollo/client";
+import client from "../../apolloClient";
 
-const ProjectOne = () => {
+export async function getStaticProps() {
+  const { data } = await client.query({
+    query: gql`
+      {
+        galleries(where: { galleryTitle: "projectThree" }) {
+          galleryImages {
+            ... on Image {
+              image(first: 100) {
+                url
+              }
+            }
+          }
+        }
+      }
+    `,
+  });
+
+  let images = data.galleries[0].galleryImages.image.map((a) => a.url);
+
+  return {
+    props: { images },
+  };
+}
+
+const ProjectThree = (images) => {
   library.add(faAngleRight, faPhone);
   return (
     <>
@@ -18,10 +44,7 @@ const ProjectOne = () => {
       <div className="gallery section-wrapper">
         <section className="page-header">
           <div className="header-background service-background">
-            <img
-              alt="header-background"
-              src="/gallery/projectThree/projectThree (8).jpg"
-            />
+            <img alt="header-background" src={images.images[7]} />
           </div>
           <div className="text-container">
             <h2 className="title">Gallery</h2>
@@ -47,43 +70,6 @@ const ProjectOne = () => {
         <section className="page-columns">
           <div className="container">
             <div className="row">
-              {/* <div className="col-half">
-                <div className="content">
-                  <div className="block-title">
-                    <p className="subtitle">Who We Are</p>
-                    <h3 className="title">
-                      The Leading Log Home Construction and Restoration Company
-                      in the Country
-                    </h3>
-                  </div>
-                  <div className="block-description">
-                    <h4 className="title">
-                      Experience with Log Homes since 200X
-                    </h4>
-                    <p className="description">
-                      Texas Log Home Construction and Restoration LLC has
-                      constantly been working to create results our clients
-                      love. Having experience in this industry for over XX
-                      years, we believe that we can provide the best service for
-                      a great price. Whether you are located in Texas or
-                      otherwise, give us a call and we will send you a quote for
-                      your next project.
-                    </p>
-                  </div>
-                  <div className="block-boxes">
-                    <div className="box-half">
-                      <div className="box-wrapper">
-                        <FontAwesomeIcon
-                          icon={["fas", "phone"]}
-                          className="icon"
-                        />
-                        <h3 className="title">Call Us For A Quote</h3>
-                        <div className="button">Contact Us</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div> */}
               <div className="col-half">
                 <div className="content">
                   <Carousel
@@ -93,222 +79,13 @@ const ProjectOne = () => {
                     showIndicators={false}
                     infiniteLoop
                   >
-                    <div className="img-wrapper">
-                      <img
-                        src="/gallery/projectThree/projectThree (1).jpg"
-                        alt="Project Three image"
-                      />
-                    </div>
-                    <div className="img-wrapper">
-                      <img
-                        src="/gallery/projectThree/projectThree (2).jpg"
-                        alt="Project Three image"
-                      />
-                    </div>
-                    <div className="img-wrapper">
-                      <img
-                        src="/gallery/projectThree/projectThree (3).jpg"
-                        alt="Project Three image"
-                      />
-                    </div>
-                    <div className="img-wrapper">
-                      <img
-                        src="/gallery/projectThree/projectThree (4).jpg"
-                        alt="Project Three image"
-                      />
-                    </div>
-                    <div className="img-wrapper">
-                      <img
-                        src="/gallery/projectThree/projectThree (5).jpg"
-                        alt="Project Three image"
-                      />
-                    </div>
-                    <div className="img-wrapper">
-                      <img
-                        src="/gallery/projectThree/projectThree (6).jpg"
-                        alt="Project Three image"
-                      />
-                    </div>
-                    <div className="img-wrapper">
-                      <img
-                        src="/gallery/projectThree/projectThree (7).jpg"
-                        alt="Project Three image"
-                      />
-                    </div>
-                    <div className="img-wrapper">
-                      <img
-                        src="/gallery/projectThree/projectThree (8).jpg"
-                        alt="Project Three image"
-                      />
-                    </div>
-                    <div className="img-wrapper">
-                      <img
-                        src="/gallery/projectThree/projectThree (9).jpg"
-                        alt="Project Three image"
-                      />
-                    </div>
-                    <div className="img-wrapper">
-                      <img
-                        src="/gallery/projectThree/projectThree (10).jpg"
-                        alt="Project Three image"
-                      />
-                    </div>
-                    <div className="img-wrapper">
-                      <img
-                        src="/gallery/projectThree/projectThree (11).jpg"
-                        alt="Project Three image"
-                      />
-                    </div>
-                    <div className="img-wrapper">
-                      <img
-                        src="/gallery/projectThree/projectThree (12).jpg"
-                        alt="Project Three image"
-                      />
-                    </div>
-                    <div className="img-wrapper">
-                      <img
-                        src="/gallery/projectThree/projectThree (13).jpg"
-                        alt="Project Three image"
-                      />
-                    </div>
-                    <div className="img-wrapper">
-                      <img
-                        src="/gallery/projectThree/projectThree (14).jpg"
-                        alt="Project Three image"
-                      />
-                    </div>
-                    <div className="img-wrapper">
-                      <img
-                        src="/gallery/projectThree/projectThree (15).jpg"
-                        alt="Project Three image"
-                      />
-                    </div>
-                    <div className="img-wrapper">
-                      <img
-                        src="/gallery/projectThree/projectThree (16).jpg"
-                        alt="Project Three image"
-                      />
-                    </div>
-                    <div className="img-wrapper">
-                      <img
-                        src="/gallery/projectThree/projectThree (17).jpg"
-                        alt="Project Three image"
-                      />
-                    </div>
-                    <div className="img-wrapper">
-                      <img
-                        src="/gallery/projectThree/projectThree (18).jpg"
-                        alt="Project Three image"
-                      />
-                    </div>
-                    <div className="img-wrapper">
-                      <img
-                        src="/gallery/projectThree/projectThree (19).jpg"
-                        alt="Project Three image"
-                      />
-                    </div>
-                    <div className="img-wrapper">
-                      <img
-                        src="/gallery/projectThree/projectThree (20).jpg"
-                        alt="Project Three image"
-                      />
-                    </div>
-                    <div className="img-wrapper">
-                      <img
-                        src="/gallery/projectThree/projectThree (21).jpg"
-                        alt="Project Three image"
-                      />
-                    </div>
-                    <div className="img-wrapper">
-                      <img
-                        src="/gallery/projectThree/projectThree (22).jpg"
-                        alt="Project Three image"
-                      />
-                    </div>
-                    <div className="img-wrapper">
-                      <img
-                        src="/gallery/projectThree/projectThree (23).jpg"
-                        alt="Project Three image"
-                      />
-                    </div>
-                    <div className="img-wrapper">
-                      <img
-                        src="/gallery/projectThree/projectThree (24).jpg"
-                        alt="Project Three image"
-                      />
-                    </div>
-                    <div className="img-wrapper">
-                      <img
-                        src="/gallery/projectThree/projectThree (25).jpg"
-                        alt="Project Three image"
-                      />
-                    </div>
-                    <div className="img-wrapper">
-                      <img
-                        src="/gallery/projectThree/projectThree (26).jpg"
-                        alt="Project Three image"
-                      />
-                    </div>
-                    <div className="img-wrapper">
-                      <img
-                        src="/gallery/projectThree/projectThree (27).jpg"
-                        alt="Project Three image"
-                      />
-                    </div>
-                    <div className="img-wrapper">
-                      <img
-                        src="/gallery/projectThree/projectThree (28).jpg"
-                        alt="Project Three image"
-                      />
-                    </div>
-                    <div className="img-wrapper">
-                      <img
-                        src="/gallery/projectThree/projectThree (29).jpg"
-                        alt="Project Three image"
-                      />
-                    </div>
-                    <div className="img-wrapper">
-                      <img
-                        src="/gallery/projectThree/projectThree (30).jpg"
-                        alt="Project Three image"
-                      />
-                    </div>
-                    <div className="img-wrapper">
-                      <img
-                        src="/gallery/projectThree/projectThree (31).jpg"
-                        alt="Project Three image"
-                      />
-                    </div>
-                    <div className="img-wrapper">
-                      <img
-                        src="/gallery/projectThree/projectThree (32).jpg"
-                        alt="Project Three image"
-                      />
-                    </div>
-                    <div className="img-wrapper">
-                      <img
-                        src="/gallery/projectThree/projectThree (33).jpg"
-                        alt="Project Three image"
-                      />
-                    </div>
-                    <div className="img-wrapper">
-                      <img
-                        src="/gallery/projectThree/projectThree (34).jpg"
-                        alt="Project Three image"
-                      />
-                    </div>
-                    <div className="img-wrapper">
-                      <img
-                        src="/gallery/projectThree/projectThree (35).jpg"
-                        alt="Project Three image"
-                      />
-                    </div>
-                    <div className="img-wrapper">
-                      <img
-                        src="/gallery/projectThree/projectThree (36).jpg"
-                        alt="Project Three image"
-                      />
-                    </div>
+                    {images.images.map((image, index) => {
+                      return (
+                        <div className="img-wrapper" key={index}>
+                          <img src={image} alt="Project Three image" />
+                        </div>
+                      );
+                    })}
                   </Carousel>
                 </div>
               </div>
@@ -320,4 +97,4 @@ const ProjectOne = () => {
   );
 };
 
-export default ProjectOne;
+export default ProjectThree;

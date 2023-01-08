@@ -8,10 +8,29 @@ import {
   faHouse,
   faHammer,
 } from "@fortawesome/free-solid-svg-icons";
+import { gql } from "@apollo/client";
+import client from "../apolloClient";
 
-const About: NextPage = () => {
+export async function getStaticProps() {
+  const { data } = await client.query({
+    query: gql`
+      query {
+        galleries {
+          coverImage {
+            url
+          }
+        }
+      }
+    `,
+  });
+
+  return {
+    props: { data },
+  };
+}
+
+const About: NextPage = (data) => {
   library.add(faAngleRight, faHouse, faHammer);
-
   return (
     <>
       <Head>
@@ -136,7 +155,10 @@ const About: NextPage = () => {
                     <h4>Home Restoration</h4>
                   </div>
                   <div className="block-image">
-                    <img src="/gallery/projectOne/cover/cover.jpg" alt="test" />
+                    <img
+                      src={data.data.galleries[0].coverImage.url}
+                      alt="test"
+                    />
                   </div>
                   <div className="block-subtitle">
                     <h4>Texas</h4>
@@ -156,7 +178,10 @@ const About: NextPage = () => {
                     <h4>Log Restoration</h4>
                   </div>
                   <div className="block-image">
-                    <img src="/gallery/projectTwo/cover/cover.jpg" alt="test" />
+                    <img
+                      src={data.data.galleries[1].coverImage.url}
+                      alt="test"
+                    />
                   </div>
                   <div className="block-subtitle">
                     <h4>Texas</h4>
@@ -178,7 +203,7 @@ const About: NextPage = () => {
                   </div>
                   <div className="block-image">
                     <img
-                      src="/gallery/projectFour/cover/cover.jpg"
+                      src={data.data.galleries[3].coverImage.url}
                       alt="test"
                     />
                   </div>
@@ -201,7 +226,7 @@ const About: NextPage = () => {
                   </div>
                   <div className="block-image">
                     <img
-                      src="/gallery/projectFive/cover/cover.jpg"
+                      src={data.data.galleries[4].coverImage.url}
                       alt="test"
                     />
                   </div>
